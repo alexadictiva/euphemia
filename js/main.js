@@ -37,7 +37,7 @@ function handleSubmit(event) {
 
   mailto.setAttribute(
     "href",
-    `mailto:academiatrucking@gmail.com?subject=${formulario.get(
+    `mailto:euphemiatruck@gmail.com?subject=${formulario.get(
       "name"
     )}, ${formulario.get("email")}&body=${formulario.get("message")}`
   );
