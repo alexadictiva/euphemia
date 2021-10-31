@@ -19,6 +19,10 @@ body {
   font-family: "Inter";
 }
 
+main {
+  padding-top: 60px;
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -32,25 +36,50 @@ a {
   text-decoration: none;
 }
 
+.overlay {
+  background-color: #000000a3;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+}
+
 /*Header*/
 .header {
+  background-color: #ffffff;
   position: fixed;
+  width: 100%;
+  height: 60px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  z-index: 100;
+}
+
+.header .brandContainer {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 20px;
+}
+
+.header .menuBox {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 100%;
-  height: 60px;
-  background-color: #ffffff;
-  max-width: 1024px;
 }
 
-.header .buttonMenuContainer label {
+.header .menuBox .buttonMenuContainer {
+  height: 100%;
+}
+
+.header .menuBox .buttonMenuContainer label {
   cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -61,20 +90,24 @@ a {
           flex-direction: column;
   gap: 5px;
   padding: 0 20px;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.header .buttonMenuContainer label .span {
+.header .menuBox .buttonMenuContainer label .span {
   background-color: #000000;
   width: 25px;
   height: 3px;
   border-radius: 50px;
 }
 
-.header .buttonMenuContainer input {
+.header .menuBox .buttonMenuContainer input {
   display: none;
 }
 
-.header .menu {
+.header .menuBox .menu {
   position: absolute;
   top: 60px;
   right: -768px;
@@ -85,7 +118,7 @@ a {
   transition: right 0.3s ease-in-out;
 }
 
-.header .menu .menuContainer {
+.header .menuBox .menu .menuContainer {
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -98,36 +131,43 @@ a {
   padding: 20px 0;
 }
 
-.header .menu .menuContainer .itemMenu {
+.header .menuBox .menu .menuContainer .itemMenu {
   padding: 10px;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
-.header .menu .menuContainer .itemMenu:hover {
+.header .menuBox .menu .menuContainer .itemMenu:hover {
   -webkit-box-shadow: 384px 0 8px blue inset;
           box-shadow: 384px 0 8px blue inset;
 }
 
-.header .menu .menuContainer .itemMenu .linkMenu {
+.header .menuBox .menu .menuContainer .itemMenu .linkMenu {
   color: reed;
 }
 
-.header .hidden {
+.header .menuBox .hidden {
   right: 0;
 }
 
 @media screen and (min-width: 768px) {
-  .header .buttonMenuContainer label {
+  .header .brandContainer {
+    width: 30%;
+  }
+  .header .menuBox {
+    width: 70%;
+  }
+  .header .menuBox .buttonMenuContainer label {
     display: none;
   }
-  .header .menu {
+  .header .menuBox .menu {
+    width: 80%;
     height: 60px;
     top: 0;
-    width: 100%;
+    /*  width: 100%; */
     right: 0;
   }
-  .header .menu .menuContainer {
+  .header .menuBox .menu .menuContainer {
     width: 100%;
     padding: 0;
     -webkit-box-align: center;
@@ -141,10 +181,372 @@ a {
         -ms-flex-direction: row;
             flex-direction: row;
   }
-  .header .menu .menuContainer .itemMenu:hover {
+  .header .menuBox .menu .menuContainer .itemMenu:hover {
     -webkit-box-shadow: none;
             box-shadow: none;
     border-bottom: red solid 2px;
+  }
+}
+
+.introContainer {
+  height: 80vh;
+}
+
+.introContainer .swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.introContainer .swiper .swiper-slide {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.introContainer .swiper .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.aboutContainer {
+  padding: 40px 20px;
+}
+
+@media (min-width: 1024px) {
+  .aboutContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 30px;
+  }
+}
+
+@media (min-width: 1024px) and (min-width: 1024px) {
+  .aboutContainer .aboutDescription {
+    width: 50%;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+}
+
+@media (min-width: 1024px) and (min-width: 1024px) {
+  .aboutContainer .aboutImg {
+    width: 50%;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+}
+
+/*mini carousel*/
+.miniCarousel {
+  margin: 50px 0;
+}
+
+.carouselContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: scroll;
+  -ms-scroll-snap-type: x proximity;
+      scroll-snap-type: x proximity;
+}
+
+@media (min-width: 1024px) {
+  .carouselContent {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.carouselContent .imgContainer {
+  text-align: center;
+  scroll-snap-align: center;
+  margin: 0px 35px;
+  min-width: 110px;
+}
+
+.carouselContent .imgContainer p {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.7rem;
+}
+
+.servicesContainer {
+  padding: 40px 20px;
+}
+
+@media (min-width: 768px) {
+  .servicesContainer .servicesContent {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 30px;
+  }
+}
+
+.servicesContainer .servicesContent .cardService {
+  padding: 40px 20px;
+}
+
+/*Benefits*/
+.cardContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 15px;
+  max-width: 768px;
+  margin: auto;
+}
+
+.cardContainer .cardGeneral {
+  text-align: center;
+  padding: 15px;
+  min-width: 280px;
+  max-width: 300px;
+}
+
+.faqsContainer {
+  padding: 40px 20px;
+}
+
+/*FAQs*/
+.faqsContainer {
+  margin: auto;
+  min-width: 320px;
+  max-width: 768px;
+}
+
+.faqsTitle {
+  padding: 0 10px;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 60px;
+  outline: none;
+  color: white;
+  background: red;
+  margin: 0;
+  cursor: pointer;
+  text-align: left;
+}
+
+.faqsDescription {
+  display: none;
+  margin: 0;
+  padding: 16px 19px 24px;
+}
+
+.contactContainer {
+  padding: 40px 20px;
+}
+
+.contactContainer .formContainer {
+  margin: auto;
+}
+
+@media (min-width: 1024px) {
+  .contactContainer .formContainer form {
+    text-align: right;
+  }
+}
+
+@media (min-width: 1024px) {
+  .contactContainer .formContainer form div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 10px;
+  }
+}
+
+.contactContainer .formContainer form div input {
+  height: 60px;
+  border: 0;
+  background-color: grey;
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 12px 8px;
+}
+
+.contactContainer .formContainer form div input::-webkit-input-placeholder {
+  color: red;
+}
+
+.contactContainer .formContainer form div input:-ms-input-placeholder {
+  color: red;
+}
+
+.contactContainer .formContainer form div input::-ms-input-placeholder {
+  color: red;
+}
+
+.contactContainer .formContainer form div input::placeholder {
+  color: red;
+}
+
+.contactContainer .formContainer form textarea {
+  border: 0;
+  height: 180px;
+  width: 100%;
+  padding: 12px 8px;
+  resize: none;
+  background-color: grey;
+  margin-bottom: 20px;
+}
+
+.contactContainer .formContainer form textarea::-webkit-input-placeholder {
+  color: red;
+}
+
+.contactContainer .formContainer form textarea:-ms-input-placeholder {
+  color: red;
+}
+
+.contactContainer .formContainer form textarea::-ms-input-placeholder {
+  color: red;
+}
+
+.contactContainer .formContainer form textarea::placeholder {
+  color: red;
+}
+
+.contactContainer .formContainer form button {
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  color: white;
+  padding: 10px 0px;
+  width: 25%;
+  border-radius: 9px;
+  background-color: blue;
+}
+
+@media (min-width: 1024px) {
+  .contactContainer .formContainer form button {
+    width: 15%;
+  }
+}
+
+.contactContainer #mailto {
+  display: none;
+}
+
+/*footer*/
+footer {
+  padding: 40px 20px;
+  background-color: green;
+  color: black;
+}
+
+.footerBrand {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.footerBrand img {
+  width: 20%;
+}
+
+.infoFooterContainer {
+  padding: 0 20px;
+}
+
+.addressContainer {
+  margin: 0 auto 50px;
+}
+
+.rrssContainer {
+  margin: auto;
+}
+
+.addressContainer h3,
+.rrssContainer h3 {
+  text-align: center;
+}
+
+.itemFooter {
+  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 30px;
+}
+
+.itemFooter div,
+.itemFooter div a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: black;
+}
+
+.itemFooter div img {
+  margin-right: 10px;
+}
+
+.firmContainer {
+  color: white;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.firmContainer p {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .contactContainer {
+    padding: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .instructionsContainer,
+  .formContainer {
+    width: 50%;
+  }
+  .addressContainer,
+  .rrssContainer {
+    width: 50%;
+    padding: 0 30px;
   }
 }
 /*# sourceMappingURL=styles.css.map */

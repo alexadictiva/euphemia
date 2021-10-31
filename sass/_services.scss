@@ -1,0 +1,12 @@
+.servicesContainer {
+  @include padding;
+  .servicesContent {
+    @include tablet {
+      display: flex;
+      gap: 30px;
+    }
+    .cardService {
+      @include padding;
+    }
+  }
+}

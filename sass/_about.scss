@@ -1,0 +1,19 @@
+.aboutContainer {
+  @include padding;
+  @include desktop {
+    display: flex;
+    gap: 30px;
+    .aboutDescription {
+      @include desktop {
+        width: 50%;
+        order: 2;
+      }
+    }
+    .aboutImg {
+      @include desktop {
+        width: 50%;
+        order: 1;
+      }
+    }
+  }
+}

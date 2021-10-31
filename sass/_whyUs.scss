@@ -1,0 +1,15 @@
+/*Benefits*/
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  max-width: 768px;
+  margin: auto;
+  .cardGeneral {
+    text-align: center;
+    padding: 15px;
+    min-width: 280px;
+    max-width: 300px;
+  }
+}
