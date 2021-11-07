@@ -67,6 +67,10 @@ a {
   padding-left: 20px;
 }
 
+.header .brandContainer img {
+  height: 90%;
+}
+
 .header .menuBox {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
@@ -139,19 +143,30 @@ a {
 }
 
 .header .menuBox .menu .menuContainer .itemMenu:hover {
-  -webkit-box-shadow: 384px 0 8px blue inset;
-          box-shadow: 384px 0 8px blue inset;
+  -webkit-box-shadow: 384px 0 8px #cf463e inset;
+          box-shadow: 384px 0 8px #cf463e inset;
 }
 
 .header .menuBox .menu .menuContainer .itemMenu .linkMenu {
-  color: reed;
+  color: #838383;
+  font: normal 17px/22px "Inter";
+}
+
+.header .menuBox .menu .menuContainer .itemMenu:hover > .linkMenu {
+  color: #ffffff;
+}
+
+@media (min-width: 1024px) {
+  .header .menuBox .menu .menuContainer .itemMenu:hover > .linkMenu {
+    color: #cf463e;
+  }
 }
 
 .header .menuBox .hidden {
   right: 0;
 }
 
-@media screen and (min-width: 768px) {
+@media (min-width: 1024px) {
   .header .brandContainer {
     width: 30%;
   }
@@ -165,18 +180,17 @@ a {
     width: 80%;
     height: 60px;
     top: 0;
-    /*  width: 100%; */
     right: 0;
   }
   .header .menuBox .menu .menuContainer {
     width: 100%;
-    padding: 0;
+    padding: 0 0 0 20px;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -185,7 +199,7 @@ a {
   .header .menuBox .menu .menuContainer .itemMenu:hover {
     -webkit-box-shadow: none;
             box-shadow: none;
-    border-bottom: red solid 2px;
+    border-bottom: #cf463e solid 2px;
   }
 }
 
@@ -221,6 +235,8 @@ a {
 
 .aboutContainer {
   padding: 40px 20px;
+  text-align: center;
+  text-align: center;
 }
 
 @media (min-width: 1024px) {
@@ -228,12 +244,26 @@ a {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     gap: 30px;
   }
 }
 
-@media (min-width: 1024px) and (min-width: 1024px) {
+.aboutContainer .aboutDescription h2 {
+  margin-bottom: 20px;
+  font: bold 25px/30px "Inter";
+}
+
+.aboutContainer .aboutDescription p {
+  margin-bottom: 40px;
+  font: normal 17px/23px "Inter";
+}
+
+@media (min-width: 1024px) {
   .aboutContainer .aboutDescription {
+    padding: 0 50px;
     width: 50%;
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
@@ -241,7 +271,7 @@ a {
   }
 }
 
-@media (min-width: 1024px) and (min-width: 1024px) {
+@media (min-width: 1024px) {
   .aboutContainer .aboutImg {
     width: 50%;
     -webkit-box-ordinal-group: 2;
@@ -262,6 +292,10 @@ a {
   overflow-x: scroll;
   -ms-scroll-snap-type: x proximity;
       scroll-snap-type: x proximity;
+}
+
+.carouselContent::-webkit-scrollbar {
+  display: none;
 }
 
 @media (min-width: 1024px) {
@@ -287,6 +321,11 @@ a {
 
 .servicesContainer {
   padding: 40px 20px;
+  text-align: center;
+}
+
+.servicesContainer h2 {
+  font: bold 25px/30px "Inter";
 }
 
 @media (min-width: 768px) {
@@ -294,16 +333,56 @@ a {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     gap: 30px;
   }
 }
 
 .servicesContainer .servicesContent .cardService {
   padding: 40px 20px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .servicesContainer .servicesContent .cardService {
+    max-width: 220px;
+  }
+}
+
+.servicesContainer .servicesContent .cardService img {
+  margin-bottom: 20px;
+}
+
+.servicesContainer .servicesContent .cardService h3 {
+  margin-bottom: 20px;
+  font: bold 21px/26px "Inter";
+}
+
+.servicesContainer .servicesContent .cardService p {
+  padding: 0 40px;
+  font: normal 15px/20px "Inter";
+}
+
+@media (min-width: 768px) {
+  .servicesContainer .servicesContent .cardService p {
+    padding: 0;
+  }
 }
 
 /*Benefits*/
-.cardContainer {
+.whyusContainer {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.whyusContainer h2 {
+  margin-bottom: 40px;
+  font: bold 25px/30px "Inter";
+}
+
+.whyusContainer .cardContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -317,26 +396,42 @@ a {
   margin: auto;
 }
 
-.cardContainer .cardGeneral {
+.whyusContainer .cardContainer .cardGeneral {
+  -webkit-box-shadow: 2px 2px 8px #000000;
+          box-shadow: 2px 2px 8px #000000;
+  border-radius: 10px;
   text-align: center;
   padding: 15px;
   min-width: 280px;
   max-width: 300px;
 }
 
-.faqsContainer {
-  padding: 40px 20px;
+.whyusContainer .cardContainer .cardGeneral h3 {
+  font: bold 21px/26px "Inter";
+  margin-bottom: 10px;
+}
+
+.whyusContainer .cardContainer .cardGeneral p {
+  font: normal 15px/20px "Inter";
 }
 
 /*FAQs*/
 .faqsContainer {
+  padding: 40px 20px;
+  text-align: center;
   margin: auto;
   min-width: 320px;
   max-width: 768px;
 }
 
-.faqsTitle {
+.faqsContainer h2 {
+  margin-bottom: 40px;
+  font: bold 25px/30px "Inter";
+}
+
+.faqsContainer .faqsContent .faqsTitle {
   padding: 0 10px;
+  font: normal 17px/23px "Inter";
   border: 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   display: -webkit-box;
@@ -351,35 +446,43 @@ a {
   width: 100%;
   height: 60px;
   outline: none;
-  color: white;
-  background: red;
+  color: #ffffff;
+  background: #cf463e;
   margin: 0;
   cursor: pointer;
   text-align: left;
 }
 
-.faqsDescription {
+.faqsContainer .faqsContent .faqsDescription {
   display: none;
   margin: 0;
   padding: 16px 19px 24px;
+  font: normal 15px/20px "Inter";
 }
 
-.contactContainer {
+.formContainer {
   padding: 40px 20px;
+  text-align: center;
+  margin: auto;
 }
 
-.contactContainer .formContainer {
+.formContainer h2 {
+  margin-bottom: 40px;
+  font: bold 25px/30px "Inter";
+}
+
+.formContainer .formContent {
   margin: auto;
 }
 
 @media (min-width: 1024px) {
-  .contactContainer .formContainer form {
+  .formContainer .formContent form {
     text-align: right;
   }
 }
 
 @media (min-width: 1024px) {
-  .contactContainer .formContainer form div {
+  .formContainer .formContent form div {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -387,112 +490,104 @@ a {
   }
 }
 
-.contactContainer .formContainer form div input {
+.formContainer .formContent form div input {
   height: 60px;
   border: 0;
-  background-color: grey;
+  background-color: #cec7c7;
   margin-bottom: 10px;
   width: 100%;
   padding: 12px 8px;
 }
 
-.contactContainer .formContainer form div input::-webkit-input-placeholder {
-  color: red;
+.formContainer .formContent form div input::-webkit-input-placeholder {
+  color: #838383;
+  font: normal 15px/20px "Inter";
 }
 
-.contactContainer .formContainer form div input:-ms-input-placeholder {
-  color: red;
+.formContainer .formContent form div input:-ms-input-placeholder {
+  color: #838383;
+  font: normal 15px/20px "Inter";
 }
 
-.contactContainer .formContainer form div input::-ms-input-placeholder {
-  color: red;
+.formContainer .formContent form div input::-ms-input-placeholder {
+  color: #838383;
+  font: normal 15px/20px "Inter";
 }
 
-.contactContainer .formContainer form div input::placeholder {
-  color: red;
+.formContainer .formContent form div input::placeholder {
+  color: #838383;
+  font: normal 15px/20px "Inter";
 }
 
-.contactContainer .formContainer form textarea {
+.formContainer .formContent form textarea {
   border: 0;
   height: 180px;
   width: 100%;
   padding: 12px 8px;
   resize: none;
-  background-color: grey;
+  background-color: #cec7c7;
   margin-bottom: 20px;
 }
 
-.contactContainer .formContainer form textarea::-webkit-input-placeholder {
-  color: red;
+.formContainer .formContent form textarea::-webkit-input-placeholder {
+  font: normal 15px/20px "Inter";
+  color: #838383;
 }
 
-.contactContainer .formContainer form textarea:-ms-input-placeholder {
-  color: red;
+.formContainer .formContent form textarea:-ms-input-placeholder {
+  font: normal 15px/20px "Inter";
+  color: #838383;
 }
 
-.contactContainer .formContainer form textarea::-ms-input-placeholder {
-  color: red;
+.formContainer .formContent form textarea::-ms-input-placeholder {
+  font: normal 15px/20px "Inter";
+  color: #838383;
 }
 
-.contactContainer .formContainer form textarea::placeholder {
-  color: red;
+.formContainer .formContent form textarea::placeholder {
+  font: normal 15px/20px "Inter";
+  color: #838383;
 }
 
-.contactContainer .formContainer form button {
+.formContainer .formContent form button {
   border: 0;
   outline: none;
   cursor: pointer;
-  color: white;
+  color: #ffffff;
   padding: 10px 0px;
   width: 25%;
   border-radius: 9px;
-  background-color: blue;
+  background-color: #cf463e;
 }
 
 @media (min-width: 1024px) {
-  .contactContainer .formContainer form button {
+  .formContainer .formContent form button {
     width: 15%;
   }
 }
 
-.contactContainer #mailto {
+.formContainer #mailto {
   display: none;
 }
 
 /*footer*/
 footer {
-  padding: 40px 20px;
-  background-color: green;
-  color: black;
+  padding-top: 40px;
+  background-color: #cec7c7;
+  color: #000000;
 }
 
-.footerBrand {
-  text-align: center;
-  padding: 40px 20px;
-}
-
-.footerBrand img {
-  width: 20%;
-}
-
-.infoFooterContainer {
+footer .infoFooterContainer {
   padding: 0 20px;
 }
 
-.addressContainer {
-  margin: 0 auto 50px;
+footer .infoFooterContainer .addressContainer h3,
+footer .infoFooterContainer .rrssContainer h3 {
+  font: bold 21px/26px "Inter";
 }
 
-.rrssContainer {
-  margin: auto;
-}
-
-.addressContainer h3,
-.rrssContainer h3 {
-  text-align: center;
-}
-
-.itemFooter {
+footer .infoFooterContainer .addressContainer .itemFooter,
+footer .infoFooterContainer .rrssContainer .itemFooter {
   margin-bottom: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -503,20 +598,47 @@ footer {
   gap: 30px;
 }
 
-.itemFooter div,
-.itemFooter div a {
+footer .infoFooterContainer .addressContainer .itemFooter div,
+footer .infoFooterContainer .addressContainer .itemFooter a,
+footer .infoFooterContainer .rrssContainer .itemFooter div,
+footer .infoFooterContainer .rrssContainer .itemFooter a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  color: black;
+  color: #000000;
 }
 
-.itemFooter div img {
+footer .infoFooterContainer .addressContainer .itemFooter div img,
+footer .infoFooterContainer .rrssContainer .itemFooter div img {
   margin-right: 10px;
 }
 
-.firmContainer {
-  color: white;
+footer .infoFooterContainer .addressContainer .itemFooter div p,
+footer .infoFooterContainer .rrssContainer .itemFooter div p {
+  font: normal 15px/20px "Inter";
+}
+
+footer .infoFooterContainer .addressContainer {
+  margin: 30px auto 0;
+}
+
+footer .infoFooterContainer .addressContainer h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+footer .infoFooterContainer .rrssContainer {
+  margin: auto;
+}
+
+footer .infoFooterContainer .rrssContainer h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+footer .firmContainer {
+  background-color: #cf463e;
+  color: #ffffff;
   height: 60px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -529,8 +651,9 @@ footer {
           justify-content: center;
 }
 
-.firmContainer p {
+footer .firmContainer p {
   text-align: center;
+  font: normal 15px/20px "Inter";
 }
 
 @media (min-width: 768px) {

@@ -1,19 +1,30 @@
 .aboutContainer {
   @include padding;
+  text-align: center;
   @include desktop {
     display: flex;
+    align-items: center;
     gap: 30px;
-    .aboutDescription {
-      @include desktop {
-        width: 50%;
-        order: 2;
-      }
+  }
+  .aboutDescription {
+    h2 {
+      margin-bottom: 20px;
+      font: $fontTitle;
     }
-    .aboutImg {
-      @include desktop {
-        width: 50%;
-        order: 1;
-      }
+    p {
+      margin-bottom: 40px;
+      font: $fontParagraph;
+    }
+    @include desktop {
+      padding: 0 50px;
+      width: 50%;
+      order: 2;
+    }
+  }
+  .aboutImg {
+    @include desktop {
+      width: 50%;
+      order: 1;
     }
   }
 }

@@ -1,58 +1,64 @@
 /*footer*/
 footer {
-  @include padding;
-  background-color: green;
-
-  color: black;
-}
-.footerBrand {
-  text-align: center;
-  padding: 40px 20px;
-}
-.footerBrand img {
-  width: 20%;
-}
-.infoFooterContainer {
-  padding: 0 20px;
-}
-
-.addressContainer {
-  margin: 0 auto 50px;
-}
-.rrssContainer {
-  margin: auto;
-}
-.addressContainer h3,
-.rrssContainer h3 {
-  text-align: center;
-}
-
-.itemFooter {
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-}
-.itemFooter div,
-.itemFooter div a {
-  display: flex;
-  color: black;
-}
-
-.itemFooter div img {
-  margin-right: 10px;
-}
-
-.firmContainer {
-  color: white;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  p {
-    text-align: center;
+  padding-top: 40px;
+  background-color: $color6;
+  color: $black;
+  .infoFooterContainer {
+    padding: 0 20px;
+    .addressContainer,
+    .rrssContainer {
+      h3 {
+        font: $fontSubtitle;
+      }
+      .itemFooter {
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        div,
+        a {
+          display: flex;
+          color: $black;
+        }
+        div {
+          img {
+            margin-right: 10px;
+          }
+          p {
+            font: $fontCard;
+          }
+        }
+      }
+    }
+    .addressContainer {
+      margin: 30px auto 0;
+      h3 {
+        text-align: center;
+        margin-bottom: 10px;
+      }
+    }
+    .rrssContainer {
+      margin: auto;
+      h3 {
+        text-align: center;
+        margin-bottom: 10px;
+      }
+    }
+  }
+  .firmContainer {
+    background-color: $color1;
+    color: $white;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    p {
+      text-align: center;
+      font: $fontInput;
+    }
   }
 }
+
 @include tablet {
   .contactContainer {
     padding: 40px;

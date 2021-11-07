@@ -11,6 +11,9 @@
     display: flex;
     align-items: center;
     padding-left: 20px;
+    img {
+      height: 90%;
+    }
   }
   .menuBox {
     justify-content: flex-end;
@@ -57,11 +60,17 @@
           padding: 10px;
           transition: all 0.3s ease;
           &:hover {
-            box-shadow: 384px 0 8px $color2 inset;
+            box-shadow: 384px 0 8px $color1 inset;
           }
-
           .linkMenu {
-            color: reed;
+            color: $color5;
+            font: $fontMenu;
+          }
+          &:hover > .linkMenu {
+            color: $white;
+            @include desktop {
+              color: $color1;
+            }
           }
         }
       }
@@ -72,7 +81,7 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+@include desktop {
   .header {
     .brandContainer {
       width: 30%;
@@ -88,14 +97,13 @@
         width: 80%;
         height: 60px;
         top: 0;
-        /*  width: 100%; */
         right: 0;
 
         .menuContainer {
           width: 100%;
-          padding: 0;
+          padding: 0 0 0 20px;
           align-items: center;
-          justify-content: center;
+          justify-content: end;
           flex-direction: row;
           .itemMenu {
             &:hover {

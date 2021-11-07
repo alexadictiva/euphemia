@@ -6,6 +6,9 @@
   display: flex;
   overflow-x: scroll;
   scroll-snap-type: x proximity;
+  &::-webkit-scrollbar {
+    display: none;
+  }
   @include desktop {
     justify-content: center;
   }

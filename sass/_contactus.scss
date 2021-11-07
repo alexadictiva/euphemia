@@ -1,6 +1,11 @@
-.contactContainer {
+.formContainer {
   @include padding;
-  .formContainer {
+  margin: auto;
+  h2 {
+    margin-bottom: 40px;
+    font: $fontTitle;
+  }
+  .formContent {
     margin: auto;
     form {
       @include desktop {
@@ -14,13 +19,14 @@
         input {
           height: 60px;
           border: 0;
-          background-color: grey;
+          background-color: $color6;
 
           margin-bottom: 10px;
           width: 100%;
           padding: 12px 8px;
           &::placeholder {
-            color: red;
+            color: $color5;
+            font: $fontInput;
           }
         }
       }
@@ -30,21 +36,22 @@
         width: 100%;
         padding: 12px 8px;
         resize: none;
-        background-color: grey;
+        background-color: $color6;
         margin-bottom: 20px;
         &::placeholder {
-          color: red;
+          font: $fontInput;
+          color: $color5;
         }
       }
       button {
         border: 0;
         outline: none;
         cursor: pointer;
-        color: white;
+        color: $white;
         padding: 10px 0px;
         width: 25%;
         border-radius: 9px;
-        background-color: blue;
+        background-color: $color1;
         @include desktop {
           width: 15%;
         }
