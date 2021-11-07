@@ -203,8 +203,10 @@ a {
   }
 }
 
-.introContainer {
-  height: 80vh;
+@media (min-width: 768px) {
+  .introContainer {
+    height: 80vh;
+  }
 }
 
 .introContainer .swiper {
