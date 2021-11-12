@@ -8,7 +8,13 @@ function showMenu() {
   overlay.classList.toggle("overlay");
 }
 /* Swiper1 */
-var swiper = new Swiper(".mySwiper", {});
+var swiper = new Swiper(".mySwiper", {
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+    loop: true,
+  },
+});
 
 /*FAQs Acordeon JQuery*/
 $(".faqsContainer").on("click", "button", function () {
